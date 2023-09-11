@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Navbar() {
   return (
     <nav>
       <div className="flex justify-between items-center max-w-4xl mx-auto p-5">
