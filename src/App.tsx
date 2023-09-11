@@ -5,7 +5,7 @@ import Codebox from "./components/Codebox";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen font-inter">
       <Navbar />
       <main className="flex-1 flex-center flex-col">
         <header>
