@@ -2,8 +2,12 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Grid from "./components/Grid";
 import Codebox from "./components/Codebox";
+import { useState } from "react";
 
-function App() {
+export default function App() {
+  const [gridCols, setGridCols] = useState(5);
+  const [gridRows, setGridRows] = useState(5);
+
   return (
     <div className="flex flex-col min-h-screen font-inter">
       <Navbar />
@@ -11,12 +15,12 @@ function App() {
         <header>
           <h1 className="text-2xl">How to use</h1>
         </header>
-        <Grid />
-        <Codebox />
+        <div className="flex-center w-full">
+          <Codebox />
+          <Grid gridCols={gridCols} gridRows={gridRows} />
+        </div>
       </main>
       <Footer />
     </div>
   );
 }
-
-export default App;
