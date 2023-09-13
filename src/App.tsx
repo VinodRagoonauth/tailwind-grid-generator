@@ -5,14 +5,14 @@ import Codebox from "./components/Codebox";
 import { useState } from "react";
 
 export default function App() {
-  const [gridCols, setGridCols] = useState(5);
-  const [gridRows, setGridRows] = useState(5);
-  const [gridGap, setgridGap] = useState(5);
+  const [gridCols, setGridCols] = useState<number>(5);
+  const [gridRows, setGridRows] = useState<number>(5);
+  const [gridGap, setgridGap] = useState<number>(5);
 
-  const [generatedCodeProps, setGeneratedCodeProps] = useState(
+  const [generatedCodeProps, setGeneratedCodeProps] = useState<string>(
     `grid grid-cols-${gridCols} grid-rows-${gridRows} gap-${gridGap}`
   );
-  const [generatedCode, setGeneratedCode] = useState(
+  const [generatedCode, setGeneratedCode] = useState<string>(
     `<div className="${generatedCodeProps}"> \n\t <div >1</div> \n</div>`
   );
 

@@ -1,7 +1,7 @@
 import RGL, { WidthProvider } from "react-grid-layout";
 const ResponsiveGridLayout = WidthProvider(RGL);
 
-export default function Grid({ gridCols, gridRows }) {
+export default function Grid({ gridCols }: { gridCols: number; gridRows: number }) {
   const generateGrid = () => {
     const domElements = [];
 
