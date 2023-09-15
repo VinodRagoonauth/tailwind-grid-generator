@@ -1,7 +1,7 @@
 import RGL, { WidthProvider } from "react-grid-layout";
 const ResponsiveGridLayout = WidthProvider(RGL);
 
-export default function Grid({ gridCols }: { gridCols: number; gridRows: number }) {
+function Grid({ gridCols }: { gridCols: number; gridRows: number }) {
   const generateGrid = () => {
     const domElements = [];
 
@@ -17,10 +17,12 @@ export default function Grid({ gridCols }: { gridCols: number; gridRows: number 
   };
 
   return (
-    <div className="flex flex-col m-5 w-full max-w-[1024px] relative bg-gray-50">
+    <div className="flex flex-col w-full max-w-[1024px] absolute top-0 left-0 z-10 ">
       <ResponsiveGridLayout rowHeight={50} preventCollision={true}>
         {generateGrid()}
       </ResponsiveGridLayout>
     </div>
   );
 }
+
+export default Grid;

@@ -1,4 +1,5 @@
 import RGL, { WidthProvider } from "react-grid-layout";
+import GridLayout from "./Grid";
 const ResponsiveGridLayout = WidthProvider(RGL);
 
 export default function BaseGrid({ gridCols, gridRows }: { gridCols: number; gridRows: number }) {
@@ -23,10 +24,11 @@ export default function BaseGrid({ gridCols, gridRows }: { gridCols: number; gri
   };
 
   return (
-    <div className="flex flex-col m-5 w-full max-w-[1024px] relative bg-gray-50">
+    <div className="flex flex-col m-5 w-full max-w-[1024px] relative z-0 bg-gray-50">
       <ResponsiveGridLayout cols={gridCols} rowHeight={50} preventCollision={true}>
         {generateGrid()}
       </ResponsiveGridLayout>
+      <GridLayout gridCols={gridCols} gridRows={gridRows} />
     </div>
   );
 }
