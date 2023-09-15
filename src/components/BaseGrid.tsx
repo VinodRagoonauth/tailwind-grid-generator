@@ -1,5 +1,6 @@
 import RGL, { WidthProvider } from "react-grid-layout";
-import GridLayout from "./Grid";
+import Grid from "./Grid";
+
 const ResponsiveGridLayout = WidthProvider(RGL);
 
 export default function BaseGrid({ gridCols, gridRows }: { gridCols: number; gridRows: number }) {
@@ -28,7 +29,7 @@ export default function BaseGrid({ gridCols, gridRows }: { gridCols: number; gri
       <ResponsiveGridLayout cols={gridCols} rowHeight={50} preventCollision={true}>
         {generateGrid()}
       </ResponsiveGridLayout>
-      <GridLayout gridCols={gridCols} gridRows={gridRows} />
+      <Grid gridCols={gridCols} gridRows={gridRows} />
     </div>
   );
 }
