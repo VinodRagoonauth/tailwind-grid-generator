@@ -7,7 +7,7 @@ function Grid({ gridCols }: { gridCols: number; gridRows: number }) {
 
     for (let i = 1; i <= gridCols; i++) {
       domElements.push(
-        <div key={i} className="bg-[#e1e9f1] rounded-sm flex-center h-full">
+        <div key={i} className="bg-[#e1e9f1] rounded-sm flex-center h-full z-20">
           <span className="p-8 text-[#4c8bc9] font-bold">{i}</span>
         </div>
       );
@@ -17,7 +17,7 @@ function Grid({ gridCols }: { gridCols: number; gridRows: number }) {
   };
 
   return (
-    <div className="flex flex-col w-full max-w-[1024px] absolute top-0 left-0 z-10 ">
+    <div className="flex flex-col w-full max-w-[1024px] absolute top-0 left-0">
       <ResponsiveGridLayout rowHeight={50} preventCollision={true}>
         {generateGrid()}
       </ResponsiveGridLayout>
