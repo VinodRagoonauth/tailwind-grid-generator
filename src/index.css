@@ -9,3 +9,7 @@
     @apply flex justify-center items-center;
   }
 }
+
+:root {
+  color-scheme: light dark;
+}

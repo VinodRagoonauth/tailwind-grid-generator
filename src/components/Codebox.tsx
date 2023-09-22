@@ -2,7 +2,7 @@ import { CopyBlock, atomOneLight, atomOneDark } from "react-code-blocks";
 
 export default function Codebox({ generatedCode }: { generatedCode: string }) {
   return (
-    <div className="m-5">
+    <>
       <CopyBlock
         // eslint-disable-next-line
         //@ts-ignore
@@ -16,6 +16,6 @@ export default function Codebox({ generatedCode }: { generatedCode: string }) {
         wrapLines={true}
         codeBlock
       />
-    </div>
+    </>
   );
 }

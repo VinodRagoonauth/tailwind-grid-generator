@@ -1,11 +1,11 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BaseGrid from "./components/BaseGrid";
-import Codebox from "./components/Codebox";
-import GridOptions from "./components/GridOptions";
+import Sidebar from "./components/Sidebar";
 
 import { useState } from "react";
 
+// TODO: Switch to useContext
 export default function App() {
   const [gridCols, setGridCols] = useState<number>(12);
   const [gridRows, setGridRows] = useState<number>(12);
@@ -23,19 +23,17 @@ export default function App() {
       <Navbar />
       <main className="flex-1 flex-center flex-col">
         <header>{/* <h1 className="text-2xl">How to use</h1> */}</header>
-        <div className="flex-center w-full lg:flex-row sm:flex-col md:flex-col">
+        <div className="flex justify-between content-center w-full lg:flex-row-reverse sm:flex-col md:flex-col">
           <BaseGrid gridCols={gridCols} gridRows={gridRows} />
-          <div>
-            <GridOptions
-              gridCols={gridCols}
-              setGridCols={setGridCols}
-              gridRows={gridRows}
-              setGridRows={setGridRows}
-              gridGap={gridGap}
-              setGridGap={setGridGap}
-            />
-            <Codebox generatedCode={generatedCode} />
-          </div>
+          <Sidebar
+            gridCols={gridCols}
+            setGridCols={setGridCols}
+            gridRows={gridRows}
+            setGridRows={setGridRows}
+            gridGap={gridGap}
+            setGridGap={setGridGap}
+            generatedCode={generatedCode}
+          />
         </div>
       </main>
       <Footer />

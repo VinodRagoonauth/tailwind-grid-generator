@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 interface GridOptionsProps {
   gridCols: number;
   gridRows: number;
@@ -15,6 +17,21 @@ export default function GridOptions({
   setGridRows,
   setGridGap,
 }: GridOptionsProps) {
+  const handleGridColsChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value, 10);
+    setGridCols(value);
+  };
+
+  const handleGridRowsChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value, 10);
+    setGridRows(value);
+  };
+
+  const handleGridGapChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value, 10);
+    setGridGap(value);
+  };
+
   return (
     <div className="flex-center gap-5">
       <div className="dark:bg-dark-secondary p-4 rounded-md dark:text-dark-primary font-bold flex-center gap-4">
@@ -23,7 +40,7 @@ export default function GridOptions({
           className="dark:bg-dark-background p-2 rounded-lg w-16"
           type="number"
           value={gridCols}
-          onChange={(e) => setGridCols(e.target.value)}
+          onChange={handleGridColsChange}
           max={12}
           min={1}
         />
@@ -34,7 +51,7 @@ export default function GridOptions({
           className="dark:bg-dark-background p-2 rounded-lg w-16"
           type="number"
           value={gridRows}
-          onChange={(e) => setGridRows(e.target.value)}
+          onChange={handleGridRowsChange}
           max={12}
           min={1}
         />
@@ -45,9 +62,9 @@ export default function GridOptions({
           className="dark:bg-dark-background p-2 rounded-lg w-16"
           type="number"
           value={gridGap}
-          onChange={(e) => setGridGap(e.target.value)}
+          onChange={handleGridGapChange}
           max={12}
-          min={1}
+          min={0}
         />
       </div>
     </div>
