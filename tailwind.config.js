@@ -16,13 +16,14 @@ export default {
         accent: "hsl(15, 32%, 22%)",
       },
       dark: {
+        primary: "hsl(180, 80%, 52%)",
+        secondary: "hsl(180, 17%, 8%)",
+        accent: "hsl(180, 40%, 54%)",
         text: "hsl(15, 40%, 98%)",
-        background: "hsl(0, 71%, 4%)",
-        primary: "hsl(15, 100%, 63%)",
-        secondary: "hsl(19, 31%, 12%)",
-        accent: "hsl(15, 32%, 52%)",
+        background: "hsl(0, 0%, 5%)",
       },
     },
   },
   plugins: [],
+  darkMode: "media",
 };

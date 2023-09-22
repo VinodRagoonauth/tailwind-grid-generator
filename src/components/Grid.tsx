@@ -7,8 +7,8 @@ function Grid({ gridCols }: { gridCols: number; gridRows: number }) {
 
     for (let i = 1; i <= gridCols; i++) {
       domElements.push(
-        <div key={i} className="bg-[#e1e9f1] rounded-sm flex-center h-full z-20">
-          <span className="p-8 text-[#4c8bc9] font-bold">{i}</span>
+        <div key={i} className="bg-[#e1e9f1] dark:bg-dark-primary rounded-sm flex-center h-full z-20">
+          <span className="p-8 text-[#4c8bc9] dark:text-[#000] font-bold">{i}</span>
         </div>
       );
     }

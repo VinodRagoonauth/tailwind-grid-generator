@@ -11,7 +11,8 @@ export default function Codebox({ generatedCode }: { generatedCode: string }) {
         // Should be jsx, but haskell has more accurate highlighting
         language={"haskell"}
         showLineNumbers={true}
-        theme={atomOneLight}
+        // TODO: Add light/dark logic
+        theme={atomOneDark}
         wrapLines={true}
         codeBlock
       />
